@@ -15,14 +15,14 @@ def location(request,location):
     return render(request, 'location.html', {"location":selected_location,"locations":locations,"images":images})
 
 
-# def search(request):
-#     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
-#         search_term = request.GET.get("category")
-#         category = request.GET.get("imagesearch")
-#         searched_images = Image.search_by_category(category)
-#         message = f"{category}"
-#         print(searched_images)
-#         return render(request,'search.html',{"images":searched_images,"category":search_term})
-#     else:
-#         message = "You haven't searched for any image category"
-#         return render(request, 'search.html', {"message": message})
+def search(request):
+    if 'imagesearch' in request.GET and request.GET["imagesearch"]:
+        search_term = request.GET.get("category")
+        category = request.GET.get("imagesearch")
+        searched_images = Image.search_by_category(category)
+        message = f"{category}"
+        print(searched_images)
+        return render(request,'search.html',{"images":searched_images,"category":search_term})
+    else:
+        message = "You haven't searched for any image category"
+        return render(request, 'search.html', {"message": message})
