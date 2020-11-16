@@ -2,14 +2,14 @@
 
 {%block content%}
 {{block.super}}
-<div class="container-fluid" style="background-color: aquamarine;">
+<div class="container-fluid">
     <div class="container">
         <div class="row">
             <div class="col-md-5" style="margin-left: 320px;">
                 <span id="locations">
                     {% for location in locations %}
                     <a class="btn btn-outline-info btn-sm" id="btn"
-                        href="{% url 'location' location.id %}">{{location}}</a>
+                        href="{% url 'location' location.id %}" style="font-size: 15px;">{{location}}</a>
                     {%endfor%}
                 </span>
             </div>
@@ -32,20 +32,20 @@
                             </button>
                         </div>
 
-                        <div class="modal-body">
+                        <div class="modal-body" style="background-color: aquamarine;">
                             <img src="{{image.image_url.url}}" alt="{{image.name}}" class="img-fluid">
                             <p class="imgdesc text-center">{{image.description}}</p>
                             {% for category in image.categories.all %}
-                            <span class="btn btn-sm btn-outline-info">{{category}}</span>
+                            <span class="btn btn-sm btn-outline-info" style="font-size: 15px;">{{category}}</span>
                             {% endfor %}
                             <a href="/location/{{image.location}}"
-                                class="btn btn-sm btn-outline-info">{{image.location}}</a>
+                                class="btn btn-sm btn-outline-info" style="font-size: 15px;">{{image.location}}</a>
                         </div>
                         <div class="modal-footer">
-                            <input class="form-control input-lg" type="text" value="{{image.image_url.url}}"
+                            <input class="form-control input-lg" type="text" style="font-size: 15px;" value="{{image.image_url.url}}"
                                 id="{{image.id}}.url">
-                            <button class="btn btn-success btn-sm" onclick="copyToClipboard('{{image.id}}.url')">Copy</button>
-                            <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
+                            <button class="btn btn-success btn-sm"  onclick="copyToClipboard('{{image.id}}.url')" style="font-size: 15px;">Copy</button>
+                            <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal" style="font-size: 15px;">Close
                             </button>
                         </div>
                     </div>

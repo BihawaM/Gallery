@@ -2,7 +2,7 @@
 
 {% block content %}
 {{block.super}}
-<div class="container" style="background-color: aquamarine;">
+<div class="container">
     <div class="row">
         <div class="row" style="padding-top: 30px;">
             <h1>{{images|length}} {{category|capfirst}} images found</h1>
@@ -31,9 +31,9 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-toggle="modal"
-                                data-target="#{{image.id}}-info"><i class="fas fa-info-circle"></i> Info</button>
+                                data-target="#{{image.id}}-info" style="font-size: 13px;"><i class="fas fa-info-circle" style="background-color: rgb(107, 107, 224);"></i> Info</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal"
-                                style="border: 0.5px solid #d3d3d3;">Close</button>
+                                style="border: 0.5px solid #d3d3d3; font-size: 15px;">Close</button>
                         </div>
                     </div>
                 </div>
@@ -49,9 +49,9 @@
                             <p>{{image.description}}</p>
                         </div>
                         <div class="modal-footer">
-                            <input class="form-control input-lg" type="text" value="{{image.image_url.url}}"
+                            <input class="form-control input-lg" type="text" style="font-size: 15px;" value="{{image.image_url.url}}"
                                 id="{{image.id}}-url">
-                            <button class="btn btn-primary" onclick="copyToClipboard('{{image.id}}-url')">Copy</button>
+                            <button class="btn btn-primary" onclick="copyToClipboard('{{image.id}}-url')" style="font-size: 15px;">Copy</button>
                         </div>
                     </div>
 
